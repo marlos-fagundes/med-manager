@@ -1,4 +1,4 @@
-from logic import validar_horario, calcular_proxima_dose, __version__
+from src.logic import validar_horario, calcular_proxima_dose, __version__
 
 def menu():
     print("-" * 30)
