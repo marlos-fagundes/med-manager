@@ -1,0 +1,11 @@
+[project]
+name = "med-manager"
+version = "1.0.0"
+description = "Sistema de controle de medicamentos para idosos"
+authors = [
+    {name = "Marlos"}
+]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W"]
