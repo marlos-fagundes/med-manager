@@ -1,6 +1,8 @@
 💊 MedManager CLI
 Projeto acadêmico para gestão simplificada de horários de medicamentos.
 
+Link do Deploy (Aplicação rodando em nuvem): https://replit.com/@marlosgamer/med-manager
+
 Versão: 1.0.0 (Semantic Versioning)
 
 Autor: Marlos Fagundes
