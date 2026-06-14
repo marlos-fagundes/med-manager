@@ -21,3 +21,13 @@ QA/Linting: Ruff (Análise estática)
 Testes: Pytest
 
 CI/CD: GitHub Actions
+
+## 👥 Equipe (Trabalho Final)
+Membro 1 - Marlos Miguel Resende Fagundes 22505518
+Membro 2 - Igor Amon Guimaraes Do Nascimento 22507334
+Membro 3 - Caua Vinicius Venturell de Carvalho Goncalves Meneses 22511362
+
+
+
+☁️ Banco de Dados
+A aplicação agora é persistente! Utilizamos o Supabase (PostgreSQL) como Database as a Service (DBaaS). As operações de Read e Create estão implementadas de forma isolada na camada lógica da CLI.
