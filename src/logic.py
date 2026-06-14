@@ -1,4 +1,6 @@
+import os
 import requests
+from supabase import create_client
 
 __version__ = "1.0.0"
 
@@ -30,3 +32,38 @@ def buscar_endereco(cep):
     except requests.RequestException:
         return None
     return None
+
+def get_supabase_client():
+    url = os.environ.get("SUPABASE_URL")
+    key = os.environ.get("SUPABASE_KEY")
+    if url and key:
+        return create_client(url, key)
+    return None
+
+def salvar_agendamento(cep, remedio, hora_inicial, intervalo, proxima):
+    """Escreve os dados no Supabase (Create)"""
+    db = get_supabase_client()
+    if db:
+        try:
+            db.table('agendamentos').insert({
+                "cep": cep,
+                "medicamento": remedio,
+                "hora_inicial": hora_inicial,
+                "intervalo": intervalo,
+                "proxima_dose": proxima
+            }).execute()
+            return True
+        except Exception:
+            return False
+    return False
+
+def listar_agendamentos():
+    """Lê os dados do Supabase (Read)"""
+    db = get_supabase_client()
+    if db:
+        try:
+            res = db.table('agendamentos').select("*").execute()
+            return res.data
+        except Exception:
+            return []
+    return []
